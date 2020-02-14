@@ -15,12 +15,12 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchPosts({ commit }) {
+  async fetchPosts({ commit }) {
     return PostService.get().then(response => {
       commit('SET_POSTS', response.data)
     })
   },
-  fetchPost({ commit }, id) {
+  async fetchPost({ commit }, id) {
     return PostService.find(id).then(response => {
       commit('SET_POST', response.data)
     })
