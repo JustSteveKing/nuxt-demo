@@ -72,7 +72,7 @@ export default {
       plugins: {
         tailwindcss: path.resolve('./tailwind.config.js')
       },
-      preset: { autoprefixer: { grid: true } }
+      preset: { autoprefixer: { grid: false } }
     },
     /*
     ** Analyze the build process
