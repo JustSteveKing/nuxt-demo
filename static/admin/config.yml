@@ -12,12 +12,12 @@ collections:
       preview: false
     files:
       - label: "Posts"
-        name: post
+        name: posts
         file: "db.json"
         extension: json
         fields:
           - label: "Blog Post"
-            name: posts
+            name: post
             widget: list
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
