@@ -6,16 +6,21 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    format: 'json'
-    file: 'db.json'
-    create: true
-    slug: 'title'
+  - label: Settings
+    name: settings
     editor:
       preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+    files:
+      - label: "Posts"
+        name: social
+        file: "db.json"
+        extension: json
+        fields:
+          - label: "Social Media List"
+            name: links
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Body', name: 'body', widget: 'markdown' }
