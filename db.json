@@ -1,25 +1,10 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "Introduction Post",
-            "content": "This is a post",
-            "image": "https://picsum.photos/seed/picsum/300/200"
-        },
-        {
-            "id": 2,
-            "title": "Another Post, I am on a roll",
-            "content": "This is a little more content",
-            "image": "https://picsum.photos/seed/picsum/300/200"
-        },
-        {
-            "id": 3,
-            "title": "This is a story, all about how",
-            "content": "My life got flipped, turned upside down",
-            "image": "https://picsum.photos/seed/picsum/300/200"
-        }
-    ],
-    "profile": {
-        "name": "typicode"
+  "links": [
+    {
+      "title": "Test",
+      "image": "/img/nong-vang-9pw4TKvT3po-unsplash.jpg",
+      "description": "sdfsdfs",
+      "body": "sdfsdfsdf"
     }
+  ]
 }
