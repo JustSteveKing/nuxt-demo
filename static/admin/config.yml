@@ -6,17 +6,17 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: Settings
-    name: settings
+  - label: "Blog Posts"
+    name: posts
     editor:
       preview: false
     files:
       - label: "Posts"
-        name: social
+        name: post
         file: "db.json"
         extension: json
         fields:
-          - label: "Social Media List"
+          - label: "Blog Post"
             name: links
             widget: list
             fields:
