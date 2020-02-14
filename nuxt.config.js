@@ -56,6 +56,10 @@ export default {
   */
   build: {
     /*
+    ** Analyze the build process
+    */
+    analyze: true,
+    /*
     ** You can extend webpack config here
     */
     extend (config, ctx) {
