@@ -1,5 +1,5 @@
 <template>
-  <article class="col-start-1 col-end-2 w-full mb-4 md:mb-0">
+  <article class="w-full mb-4 md:mb-0">
     <div class="bg-white rounded-lg overflow-hidden shadow relative">
       <img class="h-56 w-full object-cover object-center" :src="post.image" :alt="post.title">
       <div class="p-4 h-auto">

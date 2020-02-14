@@ -1,10 +1,22 @@
 {
-  "links": [
+  "posts": [
     {
-      "title": "Test",
-      "image": "/img/nong-vang-9pw4TKvT3po-unsplash.jpg",
-      "description": "sdfsdfs",
-      "body": "sdfsdfsdf"
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is some post content",
+      "image": "https://picsum.photos/seed/picsum/300/200"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is some post content",
+      "image": "https://picsum.photos/seed/picsum/300/200"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is some post content",
+      "image": "https://picsum.photos/seed/picsum/300/200"
     }
-  ]
+  ],
 }
