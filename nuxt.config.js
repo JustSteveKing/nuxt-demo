@@ -1,4 +1,13 @@
+import PurgecssPlugin from 'purgecss-webpack-plugin'
+import glob from 'glob-all'
+import path from 'path'
 const pkg = require('./package')
+
+class TailwindExtractor {
+  static extract (content) {
+    return content.match(/[A-Za-z0-9-:/]+/g) || []
+  }
+}
 
 export default {
   mode: 'universal',
@@ -24,6 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
+    './assets/css/app.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -43,7 +53,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -55,6 +65,13 @@ export default {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
+    postcss: {
+      plugins: {
+        tailwindcss: path.resolve('./tailwind.config.js')
+      },
+      preset: { autoprefixer: { grid: true } }
+    },
     /*
     ** Analyze the build process
     */
@@ -62,7 +79,25 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend (config, { isDev }) {
+      if (!isDev) {
+        config.plugins.push(
+          new PurgecssPlugin({
+            paths: glob.sync([
+              path.join(__dirname, './pages/**/*.vue'),
+              path.join(__dirname, './layouts/**/*.vue'),
+              path.join(__dirname, './components/**/*.vue')
+            ]),
+            extractors: [
+              {
+                extractor: TailwindExtractor,
+                extensions: ['vue']
+              }
+            ],
+            whitelist: ['html', 'body', 'nuxt-progress']
+          })
+        )
+      }
     }
   }
 }
