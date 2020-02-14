@@ -1,8 +1,8 @@
 <template>
-  <article class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+  <article class="w-full mb-4 md:mb-0">
     <div class="bg-white rounded-lg overflow-hidden shadow relative">
       <img class="h-56 w-full object-cover object-center" :src="post.image" :alt="post.title">
-      <header class="p-4 h-auto md:h-40 lg:h-48">
+      <div class="p-4 h-auto">
         <nuxt-link
           :to="`/posts/${post.id}`"
         >
@@ -10,9 +10,9 @@
             {{ post.title }}
           </h3>
         </nuxt-link>
-      </header>
-      <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-        {{ post.content }}
+        <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
+          {{ post.content }}
+        </div>
       </div>
     </div>
   </article>

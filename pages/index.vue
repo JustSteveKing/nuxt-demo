@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <section>
 
-    <post-card
-      v-for="(post, index) in posts"
-      :key="post.id"
-      :post="post"
-      :data-index="index"
-    />
-
-  </div>
+    <div class="grid grid-cols-3 gap-4">
+      <post-card
+        v-for="(post, index) in posts"
+        :key="post.id"
+        :post="post"
+        :data-index="index"
+      />
+    </div>
+  </section>
 </template>
 
 <script>
