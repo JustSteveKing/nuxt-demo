@@ -17,7 +17,7 @@ collections:
         extension: json
         fields:
           - label: "Blog Post"
-            name: post
+            name: posts
             widget: list
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
