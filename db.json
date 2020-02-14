@@ -1,22 +1,10 @@
 {
-  "posts": [
+  "post": [
     {
-      "id": 1,
-      "title": "Post 1",
-      "content": "This is some post content",
-      "image": "https://picsum.photos/seed/picsum/300/200"
-    },
-    {
-      "id": 2,
-      "title": "Post 2",
-      "content": "This is some post content",
-      "image": "https://picsum.photos/seed/picsum/300/200"
-    },
-    {
-      "id": 3,
-      "title": "Post 3",
-      "content": "This is some post content",
-      "image": "https://picsum.photos/seed/picsum/300/200"
+      "title": "This is a post title",
+      "image": "/img/nong-vang-9pw4TKvT3po-unsplash.jpg",
+      "description": "This is a post description",
+      "body": "This is the body of the post"
     }
   ]
 }
