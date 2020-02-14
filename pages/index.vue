@@ -1,39 +1,41 @@
 <template>
-  <div class="container bg-blue-500">
-    <div>
-      <logo />
-      <h1 class="title">
-        ls
-      </h1>
-      <h2 class="subtitle">
-        My divine Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+
+    <post-card
+      v-for="(post, index) in posts"
+      :key="post.id"
+      :post="post"
+      :data-index="index"
+    />
+
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapState } from 'vuex'
+import PostCard from '@/components/PostCard'
 
 export default {
+  head() {
+    return {
+      title: 'Post Listing'
+    }
+  },
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch('posts/fetchPosts')
+    } catch(e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch posts at thie time, please try again.'
+      })
+    }
+  },
   components: {
-    Logo
-  }
+    PostCard
+  },
+  computed: mapState({
+    posts: state => state.posts.posts
+  })
 }
 </script>
