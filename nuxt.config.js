@@ -1,6 +1,7 @@
 import PurgecssPlugin from 'purgecss-webpack-plugin'
 import glob from 'glob-all'
 import path from 'path'
+import PostService from './services/PostService'
 const pkg = require('./package')
 
 class TailwindExtractor {
@@ -98,6 +99,15 @@ export default {
           })
         )
       }
+    }
+  },
+  generate: {
+    routes: () => {
+      return PostService.get().then(response => {
+        return response.data.map(post => {
+          return `/posts/${post.id}`
+        })
+      })
     }
   }
 }
