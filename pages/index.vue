@@ -1,7 +1,7 @@
 <template>
   <section>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class="">
       <post-card
         v-for="(post, index) in posts"
         :key="post.id"
